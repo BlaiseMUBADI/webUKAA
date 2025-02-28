@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<catalog>
+	<action id="1" name="dsi" path="dsi" comment="msg:planificateur_catalog_dsi" />
+	<action id="2" name="backup" path="backup" comment="msg:planificateur_catalog_backup" />
+	<action id="3" name="sync" path="sync" comment="msg:planificateur_catalog_sync" />
+	<action id="4" name="clean" path="clean" comment="msg:planificateur_catalog_clean" />
+	<action id="5" name="stats" path="stats" comment="msg:planificateur_catalog_stats" />
+	<action id="6" name="mysql" path="mysql" comment="msg:planificateur_catalog_mysql" />
+	<action id="7" name="proc" path="proc" comment="msg:planificateur_catalog_proc" />
+	<!--<action id="8" name="resa" path="resa" comment="msg:planificateur_catalog_resa" />
+	<action id="9" name="loan" path="loan" comment="msg:planificateur_catalog_loan" />
+	<action id="10" name="reader" path="reader" comment="msg:planificateur_catalog_reader" />
+--></catalog>

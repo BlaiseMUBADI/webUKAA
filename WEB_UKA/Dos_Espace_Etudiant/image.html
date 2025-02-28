@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualisation d'une image</title>
+</head>
+<body>
+    <form action="upload_image.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="image" onchange="previewImage(event)" accept="image/*">
+        <img id="preview" src="#" alt="Image preview" style="display:none;">
+        <input type="submit" value="Envoyer l'image">
+    </form>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var preview = document.getElementById('preview');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<manifest>
+	<capacities>
+		<nostates>
+			<state name="STOPPED"/>
+		</nostates>
+		<states>
+			<state name="STOPPED">
+				<nocommand commands="RESUME"/>
+			</state>
+			<state name="SUSPENDED">
+				<nextState commands="FLUSH">SUSPENDED</nextState>
+			</state>
+			<state name="WAITING">
+				<nextState commands="FILL">WAITING</nextState>
+				<nextState commands="DIFFUSE">WAITING</nextState>
+			</state>
+		</states>
+		<commands>
+			<command id="10" name="FLUSH" label="msg:task_dsi_flush"/>
+			<command id="11" name="FILL" label="msg:task_dsi_fill"/>
+			<command id="12" name="DIFFUSE" label="msg:task_dsi_diffuse"/>
+		</commands>
+	</capacities>
+	<directory_upload>1</directory_upload>
+</manifest>

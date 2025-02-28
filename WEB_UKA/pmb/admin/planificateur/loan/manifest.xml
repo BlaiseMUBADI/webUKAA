@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<manifest>
+	<capacities>
+		<nostates>
+			<state name="STOPPED"/>
+		</nostates>
+		<states>
+			<state name="STOPPED">
+				<nocommand commands="RESUME"/>
+			</state>
+			<state name="SUSPENDED">
+				<nextState commands="FLUSH">SUSPENDED</nextState>
+			</state>
+		</states>
+		<commands/>
+	</capacities>
+	<directory_upload>1</directory_upload>
+</manifest>

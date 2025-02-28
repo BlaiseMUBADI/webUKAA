@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<manifest>
+	<capacities>
+		<nostates>
+			<state name="STOPPED"/>
+		</nostates>
+		<states>
+			<state />
+		</states>
+		<commands />
+	</capacities>
+	<directory_upload>0</directory_upload>
+</manifest>
