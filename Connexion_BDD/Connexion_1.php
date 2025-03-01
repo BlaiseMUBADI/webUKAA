@@ -2,7 +2,7 @@
 
 
 $Ip_Serveur="localhost";
-$Nom_bdd="bdd_uka_serveur";
+$Nom_bdd="bdd_uka_aa";
 $Nom_bdd1="bdd_uka_inscription";
 $Nom_user="uka";
 $Mot_passe="Admin12345";

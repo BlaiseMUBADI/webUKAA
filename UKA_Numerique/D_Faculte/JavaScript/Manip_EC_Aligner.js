@@ -259,6 +259,7 @@ function Affichage_ECs_Par_Filiere()
         case_cocher.type="checkbox";
         case_cocher.style.width = "20px"; // Augmenter la largeur
         case_cocher.style.height = "20px"; // Augmenter la hauteur
+        //case_cocher.classList.add("form-check-input","is-valid")
         case_cocher.classList.add("form-check-input")
 
         
@@ -271,8 +272,11 @@ function Affichage_ECs_Par_Filiere()
           case_cocher.disabled=false;
           case_cocher.checked=true;
         }
-        if((ec.etat_ec!==1 && ec.etat_ec_pris===1 ))case_cocher.disabled=true;
+        if((ec.etat_ec!==1 && ec.etat_ec_pris===1 )){case_cocher.disabled=true; case_cocher.classList.add("is-invalid")}
         if(ec.etat_ec_pris === 1)case_cocher.checked=true;
+
+        if(ec.etat_ec_pris_dans_annee===1)td_action.style.backgroundColor='rgba(201, 163, 163, 0.71)'
+        if(ec.etat_ec_pris_dans_annee===0)td_action.style.backgroundColor="";
         
         
         
