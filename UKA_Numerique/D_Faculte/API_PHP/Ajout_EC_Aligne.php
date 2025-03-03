@@ -23,7 +23,7 @@ $Mat_agent = $data['Mat_agent'];
 try {
     $con->beginTransaction();
 
-    $sql_ajout = "CALL Nouvel_EC_Aligne(:idAnnee_Acad, :id_ec, :Id_Semestre, :Code_Promotion, :Mat_agent)";
+    $sql_ajout = "CALL Nouvel_EC_Aligne(:idAnnee_Acad, :id_ec, :Id_Semestre, :Code_Promotion, :Mat_agent, @p_message)";
     $stmt = $con->prepare($sql_ajout);
     $stmt->bindParam(':idAnnee_Acad', $idAnnee_Acad);
     $stmt->bindParam(':id_ec', $id_ec);
@@ -32,10 +32,14 @@ try {
     $stmt->bindParam(':Mat_agent', $Mat_agent);
 
     if ($stmt->execute()) {
+        // Récupérer le message de sortie
+        $result = $con->query("SELECT @p_message AS message")->fetch(PDO::FETCH_ASSOC);
+        $message = $result['message'];
+
         if ($con->inTransaction()) {
             $con->commit();
         }
-        echo json_encode(["status" => "success", "message" => "Élément constitutif aligné ajouté avec succès !"]);
+        echo json_encode(["status" => "success", "message" => $message]);
     } else {
         throw new Exception("Échec de l'ajout.");
     }

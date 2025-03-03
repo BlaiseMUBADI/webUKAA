@@ -108,6 +108,18 @@ if(isset($_POST['Decon']))
             </span>
           </a>
 
+          <a class="a_menu dropdown-item fs-6 p-1 m-0" 
+            href="Principale_fac.php<?php 
+            
+              if($_SESSION['Categorie']=="Secrétaire_jury") echo"?page=gestion_deliberation";
+              
+              else echo"?page=non_acces";?>">
+            
+            <span class="links_name text-center border" style="width: 100%;">
+              Délibération
+            </span>
+          </a>
+
         </div>
       </li>
       <!-- ************* Fin premier menu Gestion UEs *************** -->

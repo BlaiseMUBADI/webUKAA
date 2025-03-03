@@ -6,7 +6,7 @@ var cmb_semestre_encodage=document.getElementById("id_semestre_encodage")
 
 document.addEventListener("DOMContentLoaded",function(event)
   {
-    if(document.getElementById("div_gen_encodage")!==null)
+    if(document.getElementById("div_gen_deliberation")!==null)
     {
       Liste_Etudiants();
       Afficher_EC_aligne_delibe();

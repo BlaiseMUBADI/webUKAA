@@ -58,7 +58,8 @@
             if($_GET['page']=="gestion_Aligne_ECs") require_once 'Entree_Par_Gestion_Aligne_ECs.php';
             if($_GET['page']=="gestion_Enseignants") require_once 'Entree_Par_Gestion_Enseignants.php';
             if($_GET['page']=="gestion_jury") require_once 'Entree_Par_Gestion_Jury.php';
-            if($_GET['page']=="gestion_encodage") require_once 'Entree_Par_encodage.php';
+            if($_GET['page']=="gestion_encodage") require_once 'Entree_Par_Encodage.php';
+            if($_GET['page']=="gestion_deliberation") require_once 'Entree_Par_Deliberation.php';
 
             if($_GET['page']=="non_acces") require_once 'Entree_Erreur.php';
             
@@ -80,6 +81,7 @@
   <script type="text/javascript" src="JavaScript/Manip_Enseignants.js"></script>
   <script type="text/javascript" src="JavaScript/Manip_EC_Aligner.js"></script>
   <script type="text/javascript" src="JavaScript/Manip_Encodage.js"></script>
+  <script type="text/javascript" src="JavaScript/Manip_Deliberation.js"></script>
 
 
   <script type="text/javascript" src="../D_Perception/JavaScript/Entree_rapport_paie.js"></script>  

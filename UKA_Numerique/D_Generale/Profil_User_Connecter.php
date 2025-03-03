@@ -2,7 +2,7 @@
 
 <nav style="color:white; background-color:#081d45;"class="mb-5 navbar navbar-expand-lg bg-body-tertiary fixed-top">
 
-  <div class="m-0 p-0 " style="width:50%;color:white; font-weight:bold; font-size:x-large;">
+  <div class="m-0 p-0 " style="color:white; font-weight:bold; font-size:x-large;">
     <i class="bx bx-menu sidebarBtn"></i>
     <span class="dashboard " > 
       <?php 
@@ -16,6 +16,7 @@
           else if($_GET['page']=="gestion_Enseignants") echo "Faculté : ".$_SESSION['libelle_fac']." (G_Enseignants) ";
           else if($_GET['page']=="gestion_jury") echo "Faculté : ".$_SESSION['libelle_fac']." (G_Jury) ";
           else if($_GET['page']=="gestion_encodage") echo "Encodage côte  : ".$_SESSION['prommotion']." / En :  ".$_SESSION['libelle_fac'];
+          else if($_GET['page']=="gestion_deliberation") echo "Délibération  : ".$_SESSION['prommotion']." / En :  ".$_SESSION['libelle_fac'];
         }
       ?>
     </span>
