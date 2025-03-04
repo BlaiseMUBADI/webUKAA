@@ -81,7 +81,7 @@
   <script type="text/javascript" src="JavaScript/Manip_Enseignants.js"></script>
   <script type="text/javascript" src="JavaScript/Manip_EC_Aligner.js"></script>
   <script type="text/javascript" src="JavaScript/Manip_Encodage.js"></script>
-  <script type="text/javascript" src="JavaScript/Manip_Deliberation.js"></script>
+  <!--script type="text/javascript" src="JavaScript/Manip_Deliberation.js"></script-->
 
 
   <script type="text/javascript" src="../D_Perception/JavaScript/Entree_rapport_paie.js"></script>  

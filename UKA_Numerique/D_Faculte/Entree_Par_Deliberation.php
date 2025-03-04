@@ -42,7 +42,7 @@
     <div class="home-content text-center m-0 p-3 mt-1 border"style="background-color:rgb(39,55,70);height:700px">
       
         <div class="home-content table-responsive small p-0 m-0" style="width: 100%; height:100%;">        
-          <table  class="tab1 table-bordered text-center" id="table_encodage" style="width:100%;">              
+          <table  class="tab1 table-bordered text-center" id="table_deliberation" style="width:100%;">              
             <thead class="sticky-sm-top m-0 fw-bold">
               <tr>
                 <th>N°</th>

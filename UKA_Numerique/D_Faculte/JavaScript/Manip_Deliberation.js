@@ -72,7 +72,7 @@ async function Afficher_EC_aligne_delibe() {
   let tab_etudiants_aligne = await Liste_Etudiants();
   let tab_Cotes = await Liste_Cotes(cmb_semestre_encodage.value); // Renommer la variable locale
 
-  let table_encodage = document.getElementById("table_encodage");
+  let table_encodage = document.getElementById("table_deliberation");
   while (table_encodage.firstChild) {
       table_encodage.removeChild(table_encodage.firstChild);
   }
@@ -93,27 +93,69 @@ async function Afficher_EC_aligne_delibe() {
   var tr4 = document.createElement("tr"); //Entete 3
   tr4.style = "background-color:midnightblue; color:white;"
 
-  var td1 = document.createElement("td");
-  td1.rowSpan = 4;
-  td1.textContent = "N°";
-  td1.classList.add("text-center");
-  td1.style = "background-color:midnightblue; color:white;"
+  var td11 = document.createElement("td");
+  td11.rowSpan = 4;
+  td11.textContent = "N°";
+  td11.classList.add("text-center");
+  td11.style = "background-color:midnightblue; color:white;"
 
-  var td2 = document.createElement("td");
-  td2.rowSpan = 4;
-  td2.textContent = "Mat & Nom ,Post, Prénom";
-  td2.classList.add("text-center");
-  td2.style = "background-color:midnightblue; color:white;"
+  var td12 = document.createElement("td");
+  td12.rowSpan = 4;
+  td12.textContent = "Mat & Nom ,Post, Prénom";
+  td12.classList.add("text-center");
+  td12.style = "background-color:midnightblue; color:white;"
 
-  var td3 = document.createElement("td");
-  td3.textContent = "CUE";
-  td3.classList.add("text-center");
-  td3.style = "background-color:midnightblue; color:white;"
+  var td13 = document.createElement("td");
+  td13.textContent = "CUE";
+  td13.classList.add("text-center");
+  td13.style = "background-color:midnightblue; color:white;"
+
+  var td14 = document.createElement("td");
+  td14.rowSpan=3;
+  td14.textContent = "Crédits validés";
+  td14.classList.add("text-start");
+  td14.style = "background-color:midnightblue; color:white; fontSize:20px;fontWeight:bold;"
+  td14.style.writingMode = "vertical-rl"; // Texte vertical
+  td14.style.transform = "rotate(180deg)"; // Rotation du texte
+
+  var td15 = document.createElement("td");
+  td15.rowSpan=2;
+  td15.textContent = "Total notes pondérées";
+  td15.classList.add("text-start");
+  td15.style = "background-color:midnightblue; color:white; fontSize:20px;fontWeight:bold;"
+  td15.style.writingMode = "vertical-rl"; // Texte vertical
+  td15.style.transform = "rotate(180deg)"; // Rotation du texte
+
+  var td16 = document.createElement("td");
+  td16.rowSpan=2;
+  td16.textContent = "Moyenne du "+cmb_semestre_encodage.value+" émè Semestre";
+  td16.classList.add("text-start");
+  td16.style = "background-color:midnightblue; color:white; fontSize:20px;fontWeight:bold;"
+  td16.style.writingMode = "vertical-rl"; // Texte vertical
+  td16.style.transform = "rotate(180deg)"; // Rotation du texte
+
+  var td17 = document.createElement("td");
+  td17.rowSpan=2;
+  td17.textContent = "Mention";
+  td17.classList.add("text-start");
+  td17.style = "background-color:midnightblue; color:white; fontSize:20px;fontWeight:bold;"
+  td17.style.writingMode = "vertical-rl"; // Texte vertical
+  td17.style.transform = "rotate(180deg)"; // Rotation du texte
+
+  var td18 = document.createElement("td");
+  td18.rowSpan=2;
+  td18.textContent = "Décision ";
+  td18.classList.add("text-start");
+  td18.style = "background-color:midnightblue; color:white; fontSize:20px;fontWeight:bold;"
+  td18.style.writingMode = "vertical-rl"; // Texte vertical
+  td18.style.transform = "rotate(180deg)"; // Rotation du texte
+
+
 
   
-  tr1.appendChild(td1);
-  tr1.appendChild(td2);
-  tr1.appendChild(td3);
+  tr1.appendChild(td11);
+  tr1.appendChild(td12);
+  tr1.appendChild(td13);
 
 
   var td4 = document.createElement("td");
@@ -157,6 +199,8 @@ async function Afficher_EC_aligne_delibe() {
       }
   });
 
+
+
   // Boucle pour récuperer touts les ECs (Aligner dans un semestre ) qui sont dans la base de données
   // Création du tableau qui contiendra tout les ecs séléctionnés
   let tab_ec = [];
@@ -166,8 +210,10 @@ async function Afficher_EC_aligne_delibe() {
       const td_ec = document.createElement('td');
       td_ec.textContent = ec_s_aligne.Intutile_ec;
       td_ec.classList.add("text-start"); // Centrer le texte
+      td_ec.style = "fontSize:18px;fontWeight:bold;"
       td_ec.style.writingMode = "vertical-rl"; // Texte vertical
       td_ec.style.transform = "rotate(180deg)"; // Rotation du texte
+      
 
       const td_ec_credit = document.createElement('td');
       td_ec_credit.textContent = ec_s_aligne.Credit;
@@ -181,6 +227,29 @@ async function Afficher_EC_aligne_delibe() {
       tr3.appendChild(td_ec_credit);
       tr4.appendChild(td_ec_max);
   });
+
+
+
+  /*
+  Ajout de credit valider 
+  */
+  //const td_avant_credit = document.createElement('td');
+
+  const td_credit_valider = document.createElement('td');
+  td_credit_valider.textContent = 30;
+  td_credit_valider.classList.add("text-center"); // Centrer le texte
+
+  //
+  tr1.appendChild(td14); // Ajoute de la colonne de crediut validé
+  tr1.appendChild(td15); // Ajoute de la colonne de crediut validé
+  tr1.appendChild(td16); // Ajoute de la colonne de crediut validé
+  tr1.appendChild(td17); // Ajoute de la colonne de crediut validé
+  tr1.appendChild(td18); // Ajoute de la colonne de crediut validé
+
+
+
+  //tr3.appendChild(td_avant_credit);
+  tr4.appendChild(td_credit_valider);
 
   thead.appendChild(tr1);
   thead.appendChild(tr2);
